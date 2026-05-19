@@ -1,27 +1,23 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import {
-  Cormorant_Garamond,
-  Cairo,
-  Inter,
-} from "next/font/google";
+import { Cormorant_Garamond, Cairo, Inter } from "next/font/google";
 import "./globals.css";
 
-// الخط الإنجليزي للعناوين (فخم)
+// الخط الإنجليزي الفخم للعناوين
 const displayEn = Cormorant_Garamond({
   variable: "--font-display-en",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
 });
 
-// الخط العربي الأساسي (Cairo)
+// الخط العربي الأساسي
 const bodyAr = Cairo({
   variable: "--font-body-ar",
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
-// fallback للإنجليزي
+// الخط الإنجليزي للنصوص
 const bodyEn = Inter({
   variable: "--font-body-en",
   subsets: ["latin"],
@@ -29,8 +25,37 @@ const bodyEn = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "House of Antiques",
-  description: "House of Antiques Store",
+  title: "House of Antiques | بيت التحفيات",
+  description: "House of Antiques Store - متجر بيت التحفيات",
+
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/icon.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+  },
+
+  openGraph: {
+    title: "House of Antiques | بيت التحفيات",
+    description: "House of Antiques Store - متجر بيت التحفيات",
+    siteName: "House of Antiques",
+    type: "website",
+    locale: "ar_IQ",
+  },
 };
 
 export default function RootLayout({
@@ -44,11 +69,10 @@ export default function RootLayout({
       dir="rtl"
       className={`${displayEn.variable} ${bodyAr.variable} ${bodyEn.variable}`}
     >
-    <body>
-  {children}
-
-  <GoogleAnalytics gaId="G-S7QWQ5SPMM" />
-</body>
+      <body>
+        {children}
+        <GoogleAnalytics gaId="G-S7QWQ5SPMM" />
+      </body>
     </html>
   );
 }
