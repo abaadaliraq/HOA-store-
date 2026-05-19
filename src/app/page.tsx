@@ -113,10 +113,14 @@ export default async function StorePage() {
       .select("product_id")
       .in("product_id", productIds);
 
-    if (imageError) {
-      console.error("Product images query error:", imageError);
-    }
-
+if (imageError) {
+  console.warn("Product images query warning:", {
+    message: imageError.message,
+    details: imageError.details,
+    hint: imageError.hint,
+    code: imageError.code,
+  });
+}
     const imageCounts = Array.isArray(imageRows)
       ? (imageRows as ProductImageCountRow[]).reduce<Record<string, number>>(
           (acc, row) => {
