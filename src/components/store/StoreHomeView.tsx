@@ -7,7 +7,6 @@ import StoreHero from "./StoreHero";
 import StoreFilters, { type StoreSortValue } from "./StoreFilters";
 import ProductCard, { type StoreLocale, type StoreProduct } from "./ProductCard";
 import StoreFeatured from "./StoreFeatured";
-import StoreStickyShowcase from "./StoreStickyShowcase";
 import StoreFooter from "./StoreFooter";
 import StoreRareSignedRail from "./StoreRareSignedRail";
 
@@ -893,27 +892,7 @@ export default function StoreHomeView({ products }: StoreHomeViewProps) {
             <StoreFeatured products={featuredProducts} locale={locale} />
           ) : null
         }
-        stickyShowcase={
-          isHomeDefaultView ? (
-            <StoreStickyShowcase
-              image="https://res.cloudinary.com/dyqdfbaln/image/upload/v1/hoa-slv-083-jpg_upjqky"
-              title={
-                locale === "ar"
-                  ? "اقتناء يليق بالذائقة الرفيعة"
-                  : locale === "ku"
-                  ? "گرتنێکی شیاوی زەوقی بەرز"
-                  : "A refined piece worth collecting"
-              }
-              description={
-                locale === "ar"
-                  ? "ليست كل القطع للعرض فقط، بعضها خُلق ليكون جزءاً من مجموعة خاصة."
-                  : locale === "ku"
-                  ? "هەموو پارچەکان بۆ پیشاندان نین، هەندێکیان بۆ کۆمەڵەی تایبەت دروستکراون."
-                  : "Not every piece is meant to be displayed. Some are meant to belong."
-              }
-            />
-          ) : null
-        }
+        
         footer={<StoreFooter />}
       >
         <section id="products" ref={productsRef} className="space-y-4 pt-2">

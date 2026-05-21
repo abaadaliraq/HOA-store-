@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Cormorant_Garamond, Cairo, Inter } from "next/font/google";
 import InitialLoader from "../components/InitialLoader";
 import RouteLoading from "../components/RouteLoading";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 import "./globals.css";
 
 // الخط الإنجليزي الفخم للعناوين
@@ -78,6 +79,7 @@ export default function RootLayout({
         {children}
 
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+         <ScrollToTopButton />
       </body>
     </html>
   );
