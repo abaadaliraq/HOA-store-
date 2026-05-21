@@ -53,14 +53,17 @@ export default function RouteLoading() {
 
  return (
   <div className="fixed inset-0 z-[999999] pointer-events-none flex items-center justify-center">
-    <div className="flex flex-col items-center gap-3 rounded-2xl bg-white/10 px-6 py-5 backdrop-blur-[2px]">
-      <div className="hoa-soft-loader" />
+    <div className="flex flex-col items-center gap-3">
+      <img
+        src="/loading-stamp.png"
+        alt="Loading"
+        className="hoa-stamp-loader"
+      />
 
-      <p className="text-xs font-medium text-white/70 drop-shadow">
+      <p className="text-xs font-medium text-white/75 drop-shadow">
         جاري التحميل...
       </p>
     </div>
   </div>
-
   );
 }

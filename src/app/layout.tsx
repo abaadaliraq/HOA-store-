@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Cormorant_Garamond, Cairo, Inter } from "next/font/google";
+import InitialLoader from "../components/InitialLoader";
 import RouteLoading from "../components/RouteLoading";
 import "./globals.css";
 
@@ -71,6 +72,7 @@ export default function RootLayout({
       className={`${displayEn.variable} ${bodyAr.variable} ${bodyEn.variable}`}
     >
       <body>
+         <InitialLoader />
         <RouteLoading />
 
         {children}
