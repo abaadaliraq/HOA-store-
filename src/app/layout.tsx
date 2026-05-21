@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Cormorant_Garamond, Cairo, Inter } from "next/font/google";
+import RouteLoading from "../components/RouteLoading";
 import "./globals.css";
 
 // الخط الإنجليزي الفخم للعناوين
@@ -70,8 +71,11 @@ export default function RootLayout({
       className={`${displayEn.variable} ${bodyAr.variable} ${bodyEn.variable}`}
     >
       <body>
+        <RouteLoading />
+
         {children}
-        <GoogleAnalytics gaId="G-S7QWQ5SPMM" />
+
+        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>
     </html>
   );
