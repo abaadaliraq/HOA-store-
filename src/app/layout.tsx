@@ -6,21 +6,18 @@ import RouteLoading from "../components/RouteLoading";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import "./globals.css";
 
-// الخط الإنجليزي الفخم للعناوين
 const displayEn = Cormorant_Garamond({
   variable: "--font-display-en",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
 });
 
-// الخط العربي الأساسي
 const bodyAr = Cairo({
   variable: "--font-body-ar",
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
-// الخط الإنجليزي للنصوص
 const bodyEn = Inter({
   variable: "--font-body-en",
   subsets: ["latin"],
@@ -28,8 +25,24 @@ const bodyEn = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "House of Antiques | بيت التحفيات",
-  description: "House of Antiques Store - متجر بيت التحفيات",
+  title: "House of Antiques Store | متجر بيت التحفيات",
+  description:
+    "متجر بيت التحفيات — منصة لعرض وبيع التحف، المقتنيات، القطع التراثية، الأعمال الفنية، والهدايا المختارة من بيت التحفيات في بغداد.",
+
+  keywords: [
+    "House of Antiques Store",
+    "متجر بيت التحفيات",
+    "بيت التحفيات",
+    "antiques store Iraq",
+    "Baghdad antiques",
+    "Iraqi antiques",
+    "heritage collectibles",
+    "تحف بغداد",
+    "مقتنيات تراثية",
+    "متجر تحف",
+    "تحف عراقية",
+    "هدايا تراثية",
+  ],
 
   icons: {
     icon: [
@@ -53,11 +66,19 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "House of Antiques | بيت التحفيات",
-    description: "House of Antiques Store - متجر بيت التحفيات",
-    siteName: "House of Antiques",
+    title: "House of Antiques Store | متجر بيت التحفيات",
+    description:
+      "اكتشف متجر بيت التحفيات لعرض التحف، المقتنيات، القطع التراثية، الأعمال الفنية، والهدايا المختارة.",
+    siteName: "House of Antiques Store",
     type: "website",
     locale: "ar_IQ",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "House of Antiques Store | متجر بيت التحفيات",
+    description:
+      "متجر بيت التحفيات لعرض التحف والمقتنيات والقطع التراثية المختارة.",
   },
 };
 
@@ -72,14 +93,20 @@ export default function RootLayout({
       dir="rtl"
       className={`${displayEn.variable} ${bodyAr.variable} ${bodyEn.variable}`}
     >
+      <head>
+        <meta
+          name="msvalidate.01"
+          content="01BBC0FB5BE3F105123681E741F589C8"
+        />
+      </head>
       <body>
-         <InitialLoader />
+        <InitialLoader />
         <RouteLoading />
 
         {children}
 
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
-         <ScrollToTopButton />
+        <ScrollToTopButton />
       </body>
     </html>
   );
